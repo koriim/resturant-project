@@ -47,3 +47,11 @@
 		margin: 1%;
 	}
 }
+
+/* Mobile devices at Landscape Mode & Tablet devices at Portrait Mode */
+@media screen and (max-width: 720px) {
+	#restaurants-list li {
+		width: 44%;
+		margin: 1%;
+	}
+}
