@@ -1,0 +1,6 @@
+/* For Desktops wide screens */
+@media screen and (min-width: 961px) {
+	#breadcrumb {
+		width: 100%;
+	}
+}
