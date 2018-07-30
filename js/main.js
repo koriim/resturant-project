@@ -8,7 +8,7 @@ var markers = []
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (event) => {
-  initMap(); // added 
+  initMap(); // added
   fetchNeighborhoods();
   fetchCuisines();
 });
@@ -197,15 +197,23 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 
-} 
-/* addMarkersToMap = (restaurants = self.restaurants) => {
-  restaurants.forEach(restaurant => {
-    // Add marker to the map
-    const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.map);
-    google.maps.event.addListener(marker, 'click', () => {
-      window.location.href = marker.url
-    });
-    self.markers.push(marker);
-  });
-} */
+}
+
+/**
+ * Add click event listener on filter menu handler
+ */
+handleRestaurantFilters = () => {
+    const handler = document.querySelector('.filter-options-handler');
+    handler.addEventListener('click', toggleFilters);
+  }
+
+  /**
+   * Add appropriate handling class for show / hide of filters
+   */
+  toggleFilters = (e) => {
+    const filters = document.querySelectorAll('.filter-options select');
+    for (let filter of filters) {
+      filter.classList.toggle('show');
+    }
+  }
 
